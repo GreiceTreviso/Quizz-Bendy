@@ -12,6 +12,12 @@ function login(){
      let emailValue = email.value
      let passwordValue = password.value
 
+    // validar credenciais corretas
+    if(emailValue !== 'eve@gmail.com' || passwordValue !== '123456'){
+        window.location.href = './erro.html'
+        return
+    }
+
     // criar um json
      let user = {
         email: emailValue,
