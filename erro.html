@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Acesso Negado - Quizz Bendy</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .error-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+        h1 {
+            color: #ff4444;
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background-color: #ff4444;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #cc0000;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="error-container">
+        <h1>⚠️ ACESSO NEGADO</h1>
+        <p>Você não tem permissão para acessar esta página diretamente.</p>
+        <p>Por favor, faça login primeiro!</p>
+        <a href="home.html">Ir para Login</a>
+    </div>
 </body>
 </html>
