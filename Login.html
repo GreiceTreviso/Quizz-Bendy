@@ -41,6 +41,15 @@
      <p>isabellypiccinato</p>
     </footer>
 
+    <script>
+        // Verifica se o usuário acessou através do clique na home
+        if (sessionStorage.getItem('fromHome') !== 'true') {
+            // Se não veio da home, redireciona para erro.html
+            window.location.href = 'erro.html';
+        }
+        // Limpa a flag após validação
+        sessionStorage.removeItem('fromHome');
+    </script>
     <script src="script/script.js"></script>
     <script src="script/erro.js"></script>
 
