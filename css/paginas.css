@@ -1,0 +1,86 @@
+*
+body{
+    background-color: #FFD04E;
+    display: flex;
+    flex-direction: column; /*organiza itens*/
+    min-width: 100vh; /*força a tomar tela toda dispositivo*/
+    margin: 0;
+    padding: 0;
+}
+ 
+/*css questoes*/
+.quests{ 
+background-color: #DAA520;
+padding: 10px;
+margin-bottom: 50px;
+margin-top: 20px;  
+border-radius: 4px;
+text-align: center;
+border: 2px solid black;
+box-sizing: 0px 10px 30px #000000;
+color: white;
+max-width: 700px; /*para card ficar mais fininho*/
+/*centraliza sem lascar tudo*/
+margin-left: auto;
+margin-right: auto;
+}
+
+/*css das icons*/
+.icon{
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: -10px; /*cola img pra cima*/
+}
+
+/*css das label*/
+.opc{
+display: block; /*força as label ficarem um embaixo do outro*/
+background-color: #FFC125;
+color: white;
+padding: 14px 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+text-align: center;
+cursor: pointer; /*mao ao passar mouse*/
+transition: background 0.2 ease; /*para a cor mudar em 2 segundos, sem ser instanteno*/
+}
+.opc input[type="radio"] { /*esconde as bolinhas da label*/
+    display: none; /*seleciona direto o input e esconde bolinhas padrão*/
+}
+.opc:has(input[type="radio"]:checked) { /*muda cor ao clicar*/
+    background-color: #000000;
+    /*has pergunta se vai ser marcado "checked', se a resposta for ss a cor muda*/
+}
+
+/*css footer*/
+footer{
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center; /*centralizando itens */
+    justify-content: flex-start;
+    margin-top: auto; /*joga footer pra baixo*/
+}
+.footer svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 15px; /*espaço entre os nomes*/
+    display: block;
+}
+
+/*css setinha*/ 
+.seta{
+    display: block;
+    width: 200px;
+    height: auto;
+    margin-left: 700px;
+    margin-right: 10px;
+    align-self: self-end;
+    margin-top: -130px; /*setinha sobe*/ 
+}
