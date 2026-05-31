@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado</title>
-    <style>
-        .resultado-container {
-            text-align: center;
-            padding: 20px;
-        }
-        .pontuacao {
-            font-size: 2em;
-            font-weight: bold;
-            color: #333;
-        }
-        .mensagem {
-            margin-top: 20px;
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        .excelente { color: #4CAF50; }
-        .bom { color: #2196F3; }
-        .regular { color: #FF9800; }
-        .ruim { color: #f44336; }
-    </style>
 </head>
 <body>
     <!-- header com img2 -->
@@ -31,60 +11,26 @@
     <img src="imagens/lataTopo.png" alt="header2" style="width: 100%; height: 400px; object-fit: cover; display: block; ">
   </header>
 
-  <section class="resultado-container">  <!-- div do result -->
+  <section>  <!-- div do result -->
     <div>
         <img src="imagens/bendycagado.png" alt="imgresult">
-        <p id="titulo">Pessimo!</p>
-        <p class="pontuacao"><span id="acertos">0</span>/10 acertos</p>
+        <p>Pessimo!</p>
+        <p>0/10 acertos</p>
     </div>
   </section>
    
-    <h5 id="mensagem" class="mensagem">Carregando resultado...</h5>
+    <h5>Parece que você conhece o universo de Bendy and the Ink Machine, mas ainda não escapou completamente da tinta!
+        Talvez o projetor tenha falhado, ou o Ink Demon tenha confundido suas memórias…
+        
+        Você até tenta sobreviver aos corredores da Joey Drew Studios, mas alguns detalhes importantes acabaram se perdendo no caminho. Ainda falta descobrir segredos, personagens e acontecimentos que só os verdadeiros fãs conseguem lembrar.
+        
+        Mas calma! Todo fã começa em algum lugar.
+        Que tal voltar aos capítulos, ouvir as fitas novamente e enfrentar mais uma vez os monstros de tinta? Talvez na próxima tentativa você prove que nasceu para fazer parte desse estúdio sombrio. </h5>
 
         <!-- footer com img2 -->
          <footer style=" margin-top: 0%; padding: 0; width: 100%; overflow: hidden;">
          <img src="imagens/lata.png" alt="footer2" style="width: 100%; height: 400px; object-fit: cover; display: block; ">
          </footer>
     <script src="script/erro.js"></script>
-    <script src="script/quizz.js"></script>
-    <script>
-        // Exibir pontuação e mensagem correspondente
-        function exibirResultado() {
-            const acertos = calcularPontuacao();
-            document.getElementById('acertos').textContent = acertos;
-
-            const elementoTitulo = document.getElementById('titulo');
-            const elementoMensagem = document.getElementById('mensagem');
-
-            let titulo = '';
-            let mensagem = '';
-            let classe = '';
-
-            if (acertos === 10) {
-                titulo = 'Excelente!';
-                classe = 'excelente';
-                mensagem = 'Parabéns! Você é um verdadeiro fã de Bendy and the Ink Machine! Sua dedicação aos detalhes e conhecimento profundo sobre o universo sombrio do Joey Drew Studios é impressionante. Você conquistou cada corredor, conhece cada segredo e merece estar entre os verdadeiros sobreviventes dessa história de tinta e horror.';
-            } else if (acertos >= 8) {
-                titulo = 'Muito Bom!';
-                classe = 'bom';
-                mensagem = 'Você está muito perto de dominar o universo de Bendy! Seu conhecimento é sólido e você compreende bem a maioria dos mistérios de Joey Drew Studios. Apenas alguns detalhes escuros ainda precisam ser revelados. Continue explorando e você em breve será um especialista!';
-            } else if (acertos >= 5) {
-                titulo = 'Regular';
-                classe = 'regular';
-                mensagem = 'Parece que você conhece o universo de Bendy and the Ink Machine, mas ainda não escapou completamente da tinta! Talvez o projetor tenha falhado, ou o Ink Demon tenha confundido suas memórias. Você até tenta sobreviver aos corredores da Joey Drew Studios, mas alguns detalhes importantes acabaram se perdendo no caminho.';
-            } else {
-                titulo = 'Pessimo!';
-                classe = 'ruim';
-                mensagem = 'Parece que você conhece o universo de Bendy and the Ink Machine, mas ainda não escapou completamente da tinta! Talvez o projetor tenha falhado, ou o Ink Demon tenha confundido suas memórias. Ainda falta descobrir segredos, personagens e acontecimentos que só os verdadeiros fãs conseguem lembrar. Mas calma! Todo fã começa em algum lugar. Que tal voltar aos capítulos e enfrentar mais uma vez?';
-            }
-
-            elementoTitulo.textContent = titulo;
-            elementoTitulo.className = classe;
-            elementoMensagem.textContent = mensagem;
-            elementoMensagem.className = 'mensagem ' + classe;
-        }
-
-        window.addEventListener('DOMContentLoaded', exibirResultado);
-    </script>
 </body>
 </html>
