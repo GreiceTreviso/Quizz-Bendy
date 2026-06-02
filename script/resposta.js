@@ -50,22 +50,23 @@ function gerarConteudoResultado(acertos) {
 }
 
 function mostrarResultado() {
-    coletarTodasRespostas();
+    const respostasSalvas = sessionStorage.getItem('respostasQuiz');
+    const respostas = respostasSalvas ? JSON.parse(respostasSalvas) : {};
     
     const totalPerguntas = 10;
     let acertos = 0;
     
     const respostasCorretas = {
-        s3: '3',
-        s5: '5',
-        s7: '7',
-        s9: '9',
-        s11: '11',
-        s15: '15',
-        s17: '17',
-        s19: '19',
-        s22: '22',
-        s23: '23'
+        q1: '2',
+        q2: '5',
+        q3: '7',
+        q4: '9',
+        q5: '12',
+        q6: '15',
+        q7: '17',
+        q8: '19',
+        q9: '23',
+        q10: '30'
     };
     
     for (const [chave, valor] of Object.entries(respostasCorretas)) {
@@ -74,20 +75,19 @@ function mostrarResultado() {
         }
     }
     
-    const porcentagem = Math.round((acertos / totalPerguntas) * 100);
     const conteudo = gerarConteudoResultado(acertos);
-    
-    const resultadoHTML = `
-        <div style="text-align: center; padding: 20px;">
-            <h2>${conteudo.titulo}</h2>
-            <img src="${conteudo.imagem}" alt="resultado" style="max-width: 300px; margin: 20px 0;">
-            ${conteudo.mensagem}
-            <p style="margin-top: 20px; font-size: 14px; color: #666;">Porcentagem: ${porcentagem}%</p>
-        </div>
-    `;
+    const porcentagem = Math.round((acertos / totalPerguntas) * 100);
     
     const resultDiv = document.getElementById("resultado");
     if (resultDiv) {
+        const resultadoHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <h2>${conteudo.titulo}</h2>
+                <img src="${conteudo.imagem}" alt="resultado" style="max-width: 300px; margin: 20px 0;">
+                ${conteudo.mensagem}
+                <p style="margin-top: 20px; font-size: 14px; color: #666;">Porcentagem: ${porcentagem}%</p>
+            </div>
+        `;
         resultDiv.innerHTML = resultadoHTML;
     } else {
         console.log('Resultado:', acertos, 'de', totalPerguntas);
@@ -100,3 +100,39 @@ function mostrarResultado() {
         titulo: conteudo.titulo
     }));
 }
+
+function carregarResultadoSalvo() {
+    const resultadoSalvo = sessionStorage.getItem('resultado');
+    if (!resultadoSalvo) {
+        return false;
+    }
+
+    const resultado = JSON.parse(resultadoSalvo);
+    const conteudo = gerarConteudoResultado(resultado.acertos);
+    const resultDiv = document.getElementById("resultado");
+
+    if (!resultDiv) {
+        return false;
+    }
+
+    resultDiv.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <h2>${conteudo.titulo}</h2>
+            <img src="${conteudo.imagem}" alt="resultado" style="max-width: 300px; margin: 20px 0;">
+            ${conteudo.mensagem}
+            <p style="margin-top: 20px; font-size: 14px; color: #666;">Porcentagem: ${resultado.porcentagem}%</p>
+        </div>
+    `;
+
+    return true;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('resultado')) {
+        const carregado = carregarResultadoSalvo();
+        if (!carregado) {
+            const resultDiv = document.getElementById('resultado');
+            resultDiv.innerHTML = '<div style="text-align:center; padding:20px;"><h2>Resultado não encontrado</h2><p>Por favor, responda o quiz antes de verificar o resultado.</p></div>';
+        }
+    }
+});

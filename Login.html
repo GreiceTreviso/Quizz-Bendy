@@ -18,7 +18,7 @@
       <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
-                <input class="campo" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite Email">
+                <input class="campo" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Digite Email (ex: seu@gmail.com)">
             </div>
         </div>
         <div class="mb-3 row">
@@ -27,6 +27,32 @@
             <input class="campo" type="password" class="form-control" id="inputPassword" placeholder="Digite Senha">
             </div>
         </div>
+
+        <!-- Indicador de Força da Senha -->
+        <div id="senhaRequisitos" class="senha-requisitos">
+            <p class="titulo-requisitos">Requisitos da Senha:</p>
+            <div class="requisito" id="req-min">
+                <span class="icone">✗</span> Mínimo 8 caracteres
+            </div>
+            <div class="requisito" id="req-maiuscula">
+                <span class="icone">✗</span> Uma letra maiúscula
+            </div>
+            <div class="requisito" id="req-minuscula">
+                <span class="icone">✗</span> Uma letra minúscula
+            </div>
+            <div class="requisito" id="req-numero">
+                <span class="icone">✗</span> Um número
+            </div>
+            <div class="requisito" id="req-especial">
+                <span class="icone">✗</span> Um caractere especial (!@#$%^&*)
+            </div>
+            <div class="barra-forca">
+                <div id="barraSenha" class="barra-preenchimento"></div>
+            </div>
+            <p id="textoForca" class="texto-forca"></p>
+        </div>
+        <div id="mensagemErro" class="erro-mensagem"></div>
+        <small class="dominio-info">✓ Domínios aceitos: @gmail.com, @hotmail.com, @outlook.com, @yahoo.com, @email.com</small>
 
  </div>
    
