@@ -12,11 +12,12 @@ function login(){
      let emailValue = email.value
      let passwordValue = password.value
 
-    // validar credenciais corretas
-    if(emailValue !== 'info2@gmail.com' || passwordValue !== '123igj'){
-        window.location.href = './erro.html'
-        return
-    }
+   // Valida se os campos estão vazios
+   if (emailValue.trim() === '' || passwordValue.trim() === '') {
+    alert("Por favor, preencha todos os campos!");   // para evitar erro caso não seja o email e senha identico!
+    window.location.href = '../erro.html'; // caminho corrigido
+    return;
+}
 
     // criar um json
      let user = {
@@ -25,5 +26,5 @@ function login(){
     }
 
     sessionStorage.setItem('user', JSON.stringify(user))
-    window.location.href = './pagina1.html'
+    window.location.href = '../pagina1.html'
 }

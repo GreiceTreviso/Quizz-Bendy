@@ -1,0 +1,53 @@
+*
+body{
+    background-color: #FFD04E;
+    display: flex;
+    flex-direction: column; /*organiza itens*/
+    min-height: 100vh; /*força a tomar tela toda dispositivo*/
+    margin: 0;
+    padding: 0;
+     height: auto;
+}
+
+/*card*/
+.cardr{
+background-color: #DAA520;
+padding: 10px;
+margin-bottom: 0px;
+margin-top: -80px;
+border-radius: 1% !important;
+text-align: center;
+border: 2px solid black;
+box-sizing: 0px 10px 30px #000000;
+color: white;
+max-width: 700px; /*para card ficar mais fininho*/
+/*centraliza sem lascar tudo*/
+margin-left: auto;
+margin-right: auto;
+box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+/*img card*/
+.imgr{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 20px; /*cola img pra cima*/
+}
+
+/*result img*/
+.result{
+     max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 60px; /*cola img pra cima*/
+}
+
+/*text do result */
+.textr{
+    text-align: center;
+}

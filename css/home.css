@@ -1,0 +1,38 @@
+*
+body{
+background-image: url(../imagens/image.png) !important; /*body c imagem*/
+ background-size: cover !important; /*força img a cobrir todo o fundo*/
+ background-repeat: no-repeat !important; /*img não se repete*/
+ background-position: center center;
+background-attachment: fixed; /*cola img na tela*/
+}
+
+/*css das imagens*/
+.todas {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 150px auto 20px auto;   
+}
+
+/*tamanho para as imagens*/
+.todas > img {
+    width: 30%;
+    height: auto;
+    display: block;
+    justify-content: space-between; /*distribui centro, esquerda e direita*/
+}
+
+/* tamanh para o link*/
+.todas > a {
+    width: 30%;
+    display: block;
+}
+
+.todas > a img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

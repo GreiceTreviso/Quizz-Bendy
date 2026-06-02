@@ -1,0 +1,88 @@
+
+*
+body{
+    background-color: #FFD04E;
+    display: flex;
+    flex-direction: column; /*organiza itens*/
+    min-width: 100vh; /*força a tomar tela toda dispositivo*/
+    margin: 0;
+    padding: 0;
+}
+
+/*css footer*/
+footer{
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center; /*centralizando itens */
+    justify-content: flex-start;
+    margin-top: auto; /*joga footer pra baixo*/
+    margin-top: 60px;
+}
+.footer svg{
+    width: 24px;
+    height: 24px;
+    margin-right: 15px; /*espaço entre os nomes*/
+    display: block;
+}
+
+/*css setinha butoon*/ 
+button.btn-primary{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-left: 200px;
+    margin-right: 400px !important;
+    align-self: self-end;
+    margin-top: -125px !important ;  /*setinha sobe, important pta ele respeitar*/ 
+    background: transparent; /*esconde parte branca do botão*/ 
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    z-index: 9999 !important; /*passa o botão pra frente da div*/ 
+}
+button.btn-primary img{
+    height: auto;
+    display: block;
+    max-width: 100%;
+    width: 150px;
+}
+
+/*css div de input*/ 
+.divl{
+    background-color: #ffdb78;
+    backdrop-filter: blur(8px); /* Cria o efeito de vidro fosco*/
+    width: 800px;
+    max-width: 600px; /* Controla a largura máxima da caixa */
+    padding: 80px; /* Espaço interno para os inputs não colarem na borda */
+    border-radius: 15px; 
+    margin: 50px auto; /* Centraliza */
+    box-sizing: border-box; /* alinha textos */
+    text-align: center;
+    height: 500px;
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.50); /* sombra e as direções */
+}
+/*css dos input*/ 
+.campo{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100% ;      
+    border-radius: 5px ;
+    padding: 15px  ;
+    height: 10px;
+    
+    /* Cor de fundo do input (Branco bem de leve para destacar o texto) */
+    background-color: rgba(255, 255, 255, 0.85) ; 
+    border: none ;
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+}
+/*css titulo*/ 
+.tituL{
+    margin-top: -50px;
+    margin-bottom: 70px;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.4) !important; 
+}
