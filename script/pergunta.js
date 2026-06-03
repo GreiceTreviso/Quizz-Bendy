@@ -7,9 +7,29 @@ function carregarRespostasDoStorage() {
     }
 }
 
+function atualizarBarraProgresso() {
+    const totalPerguntas = 10;
+    const perguntasRespondidas = Object.keys(respostas).length;
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    
+    // Calcula a porcentagem
+    const porcentagem = (perguntasRespondidas / totalPerguntas) * 100;
+    
+    if (progressBar) {
+        // Atualiza o width do ::after via CSS custom property
+        progressBar.style.setProperty('--progress-width', porcentagem + '%');
+    }
+    
+    if (progressText) {
+        progressText.textContent = `${perguntasRespondidas}/${totalPerguntas} Perguntas respondidas`;
+    }
+}
+
 function salvarResposta(campo, valor) {
     respostas[campo] = valor;
     sessionStorage.setItem('respostasQuiz', JSON.stringify(respostas));
+    atualizarBarraProgresso();
     console.log('Resposta salva:', campo, valor);
 }
 
@@ -23,7 +43,10 @@ function coletarTodasRespostas() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Carrega respostas salvas se existirem
     carregarRespostasDoStorage();
+    // Atualiza a barra com o progresso atual
+    atualizarBarraProgresso();
 });
 
 document.addEventListener('change', function(e) {
