@@ -80,8 +80,8 @@ footer{
     display: block;
     width: 200px;
     height: auto;
-    margin-left: 950px; /*setinha lado direito*/ 
+    margin-left: 1150px; /*setinha lado esquerda*/ 
     margin-right: 10px;
     align-self: self-end;
-    margin-top: -130px; /*setinha sobe*/ 
+    margin-top: -115px; /*setinha sobe*/ 
 }

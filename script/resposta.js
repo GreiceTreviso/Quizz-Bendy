@@ -13,7 +13,7 @@ function gerarConteudoResultado(acertos) {
     } else if (acertos >= 4 && acertos <= 5) {
         return {
             titulo: "Fraco!",
-            imagem: "imagens/pior_resultado-removebg-preview.png",
+            imagem: "/imagens/bendy fraco.png",
             mensagem: `<p><strong>${acertos}/${totalPerguntas} acertos</strong></p>
                       <p>Você está começando a desvendar os mistérios da tinta, mas ainda há muito a aprender!
                       Os segredos do Ink Demon não se revelam tão facilmente para quem não presta atenção aos detalhes.</p>
@@ -22,7 +22,7 @@ function gerarConteudoResultado(acertos) {
     } else if (acertos >= 6 && acertos <= 7) {
         return {
             titulo: "Bom!",
-            imagem: "imagens/bendy9.png",
+            imagem: "/imagens/bendy joia.png",
             mensagem: `<p><strong>${acertos}/${totalPerguntas} acertos</strong></p>
                       <p>Parabéns! Você prova ser um verdadeiro admirador do universo de Bendy and the Ink Machine!
                       Seu conhecimento sobre os personagens e a trama é impressionante.</p>
@@ -31,7 +31,7 @@ function gerarConteudoResultado(acertos) {
     } else if (acertos >= 8 && acertos <= 9) {
         return {
             titulo: "Excelente!",
-            imagem: "imagens/Bendy.png",
+            imagem: "/imagens/exe.bendy.png",
             mensagem: `<p><strong>${acertos}/${totalPerguntas} acertos</strong></p>
                       <p>Fantástico! Você é praticamente um especialista no universo de Bendy!
                       Sua dedicação e conhecimento profundo impressionam até o próprio Ink Demon.</p>
@@ -40,7 +40,7 @@ function gerarConteudoResultado(acertos) {
     } else if (acertos === 10) {
         return {
             titulo: "Perfeito! 🎬",
-            imagem: "imagens/Bendy.png",
+            imagem: "/imagens/absolute bendy.jpeg",
             mensagem: `<p><strong>${acertos}/${totalPerguntas} acertos - 100%!</strong></p>
                       <p>PERFEITO! Você é a reencarnação de um verdadeiro fã de Bendy and the Ink Machine!
                       Seu conhecimento é absolutamente impecável!</p>
