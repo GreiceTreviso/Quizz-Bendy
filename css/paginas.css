@@ -78,7 +78,7 @@ footer{
 
 /*css setinha*/ 
 .seta{
-    display: block;
+    display: touch;
     width: 200px;
     height: auto;
     margin-left: 80%;
