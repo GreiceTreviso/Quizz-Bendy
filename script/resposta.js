@@ -92,17 +92,13 @@ function mostrarResultado() {
 
 // grafico
 const erros = totalPerguntas - acertos;
-
 document.getElementById("graficoContainer").innerHTML = `
 <div style="width: 500px; margin: 20px auto;">
     <canvas id="myChart"></canvas>
 </div>
 `;
-
 const canva = document.querySelector('#myChart');
-
 const config = {
-
     type: 'bar',
     data: {
         labels: ['Acertos', 'Erros'],
@@ -133,9 +129,7 @@ const config = {
     }
 }
 };
-
 new Chart(canva, config);
-
     } else {
         console.log('Resultado:', acertos, 'de', totalPerguntas);
     }
@@ -147,13 +141,9 @@ new Chart(canva, config);
         titulo: conteudo.titulo
     }));
 }
-
 window.addEventListener('DOMContentLoaded', () => {
     mostrarResultado();
 });
-
-
-
 window.addEventListener('DOMContentLoaded', () => {
     mostrarResultado();
 });

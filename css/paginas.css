@@ -78,13 +78,13 @@ footer{
 
 /*css setinha*/ 
 .seta{
-    display: block;
+    display: touch;
     width: 200px;
     height: auto;
-    margin-left: 1150px; /*setinha lado esquerda*/ 
+    margin-left: 1160px; /*setinha lado esquerda*/ 
     margin-right: 10px;
     align-self: self-end;
-    margin-top: -115px; /*setinha sobe*/ 
+    margin-top: -120px; /*setinha sobe*/ 
 }
 
 /* css barra de progresso */

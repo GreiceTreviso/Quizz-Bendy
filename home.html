@@ -15,7 +15,49 @@
      <a href="Login.html" onclick="sessionStorage.setItem('fromHome', 'true')">
         <img class="login"  src="imagens/login.png" alt="right"> <!-- img que Linka a pagina de login --> 
     </a>
-   
     </div>
+
+<audio id="meuAudio" loop>
+  <source src="songs/Sketches (Main Menu) - Bendy and the Ink Machine [OST] - EmeraldPlayer2989 (youtube).mp3" type="audio/mp3">
+</audio>
+
+<script>
+  const audio = document.getElementById('meuAudio');
+
+  // Função que tenta dar o play
+  function tocarMusica() {
+    audio.play().then(() => {
+      // Salva no navegador que a música está rodando
+      localStorage.setItem('musicaTocando', 'true');
+    }).catch(error => {
+      console.log("Aguardando interação para tocar.");
+    });
+  }
+
+  // Tenta tocar assim que a página carrega
+  window.addEventListener('DOMContentLoaded', () => {
+    // Se já estava tocando antes de reiniciar, força o play no primeiro clique
+    if (localStorage.getItem('musicaTocando') === 'true') {
+      ativarOuvintes();
+    }
+    tocarMusica();
+  });
+
+  function ativarOuvintes() {
+    document.addEventListener('click', iniciarAoInteragir);
+    document.addEventListener('scroll', iniciarAoInteragir);
+    document.addEventListener('keydown', iniciarAoInteragir);
+  }
+
+  function iniciarAoInteragir() {
+    tocarMusica();
+    // Remove os eventos para não repetir o código à toa
+    document.removeEventListener('click', iniciarAoInteragir);
+    document.removeEventListener('scroll', iniciarAoInteragir);
+    document.removeEventListener('keydown', iniciarAoInteragir);
+  }
+</script>
+
+
 </body>
 </html>

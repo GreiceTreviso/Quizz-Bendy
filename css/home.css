@@ -15,6 +15,7 @@ background-attachment: fixed; /*cola img na tela*/
     width: 100%;
     max-width: 1200px;
     margin: 150px auto 20px auto;   
+   margin-top:300px;
 }
 
 /*tamanho para as imagens*/
@@ -23,6 +24,7 @@ background-attachment: fixed; /*cola img na tela*/
     height: auto;
     display: block;
     justify-content: space-between; /*distribui centro, esquerda e direita*/
+
 }
 
 /* tamanh para o link*/

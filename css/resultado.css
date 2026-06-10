@@ -6,7 +6,7 @@ body{
     min-height: 100vh; /*força a tomar tela toda dispositivo*/
     margin: 0;
     padding: 0;
-     height: auto;
+    max-height: 50%;
 }
 
 /*card*/
@@ -20,11 +20,13 @@ text-align: center;
 border: 2px solid black;
 box-sizing: 0px 10px 30px #000000;
 color: white;
-max-width: 700px; /*para card ficar mais fininho*/
+max-width: 800px; /*para card ficar mais fininho*/
 /*centraliza sem lascar tudo*/
 margin-left: auto;
 margin-right: auto;
 box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+margin-top: -550px;
+margin-bottom:40px
 }
 
 /*img card*/
