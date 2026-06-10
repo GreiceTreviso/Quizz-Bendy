@@ -89,10 +89,57 @@ function mostrarResultado() {
             </div>
         `;
         resultDiv.innerHTML = resultadoHTML;
+
+// grafico
+const erros = totalPerguntas - acertos;
+
+document.getElementById("graficoContainer").innerHTML = `
+<div style="width: 500px; margin: 20px auto;">
+    <canvas id="myChart"></canvas>
+</div>
+`;
+
+const canva = document.querySelector('#myChart');
+
+const config = {
+
+    type: 'bar',
+    data: {
+        labels: ['Acertos', 'Erros'],
+        datasets: [{
+            label: 'Resultado do Quiz',
+            data: [acertos, erros],
+            backgroundColor: [
+                '#000000',
+            ],
+           
+        }]
+    },
+    options: {
+    plugins: {
+        legend: {
+            display: false
+        }
+    },
+    scales: {
+        x: {
+            display: false
+        },
+        y: {
+            display: false,
+            beginAtZero: true,
+            max: totalPerguntas
+        }
+    }
+}
+};
+
+new Chart(canva, config);
+
     } else {
         console.log('Resultado:', acertos, 'de', totalPerguntas);
     }
-    
+
     sessionStorage.setItem('resultado', JSON.stringify({
         acertos,
         total: totalPerguntas,
@@ -101,38 +148,12 @@ function mostrarResultado() {
     }));
 }
 
-function carregarResultadoSalvo() {
-    const resultadoSalvo = sessionStorage.getItem('resultado');
-    if (!resultadoSalvo) {
-        return false;
-    }
+window.addEventListener('DOMContentLoaded', () => {
+    mostrarResultado();
+});
 
-    const resultado = JSON.parse(resultadoSalvo);
-    const conteudo = gerarConteudoResultado(resultado.acertos);
-    const resultDiv = document.getElementById("resultado");
 
-    if (!resultDiv) {
-        return false;
-    }
-
-    resultDiv.innerHTML = `
-        <div style="text-align: center; padding: 20px;">
-            <h2>${conteudo.titulo}</h2>
-            <img src="${conteudo.imagem}" alt="resultado" style="max-width: 300px; margin: 20px 0;">
-            ${conteudo.mensagem}
-            <p style="margin-top: 20px; font-size: 14px; color: #666;">Porcentagem: ${resultado.porcentagem}%</p>
-        </div>
-    `;
-
-    return true;
-}
 
 window.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('resultado')) {
-        const carregado = carregarResultadoSalvo();
-        if (!carregado) {
-            const resultDiv = document.getElementById('resultado');
-            resultDiv.innerHTML = '<div style="text-align:center; padding:20px;"><h2>Resultado não encontrado</h2><p>Por favor, responda o quiz antes de verificar o resultado.</p></div>';
-        }
-    }
+    mostrarResultado();
 });
