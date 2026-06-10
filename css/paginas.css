@@ -81,10 +81,11 @@ footer{
     display: block;
     width: 200px;
     height: auto;
-    margin-left: 1150px; /*setinha lado esquerda*/ 
+    margin-left: 80%;
+    margin-top: auto;
     margin-right: 10px;
-    align-self: self-end;
-    margin-top: -115px; /*setinha sobe*/ 
+    
+    
 }
 
 /* css barra de progresso */

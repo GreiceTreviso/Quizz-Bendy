@@ -36,17 +36,16 @@ footer{
 
 /*css setinha butoon*/ 
 button.btn-primary{
-    display: inline-block;
-    position: absolute;
-    width: auto;
+    
+    display: block;
+    width: 200px;
     height: auto;
-    top: 145%;
-    left: 1150px;
+    margin-left: 80%;
+    margin-top: 5px;
+    margin-right: 10px;
     background: transparent; /*esconde parte branca do botão*/ 
     border: none;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
     z-index: 9999; /*passa o botão pra frente da div*/ 
     transition: transform 0.3s ease;
 }
