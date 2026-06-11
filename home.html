@@ -17,47 +17,30 @@
     </a>
     </div>
 
-<audio id="meuAudio" loop>
-  <source src="songs/Sketches (Main Menu) - Bendy and the Ink Machine [OST] - EmeraldPlayer2989 (youtube).mp3" type="audio/mp3">
+<audio id="meuAudio" loop muted>
+  <source src="songs/Sketches (Main Menu) - Bendy and the Ink Machine [OST] - EmeraldPlayer2989 (youtube).mp3" type="audio/mpeg">
 </audio>
 
 <script>
   const audio = document.getElementById('meuAudio');
 
-  // Função que tenta dar o play
-  function tocarMusica() {
-    audio.play().then(() => {
-      // Salva no navegador que a música está rodando
-      localStorage.setItem('musicaTocando', 'true');
-    }).catch(error => {
-      console.log("Aguardando interação para tocar.");
-    });
-  }
-
-  // Tenta tocar assim que a página carrega
+  // Inicia o áudio mutado de forma 100% automática
   window.addEventListener('DOMContentLoaded', () => {
-    // Se já estava tocando antes de reiniciar, força o play no primeiro clique
-    if (localStorage.getItem('musicaTocando') === 'true') {
-      ativarOuvintes();
-    }
-    tocarMusica();
+    audio.play().catch(err => console.log("Autoplay bloqueado:", err));
   });
 
-  function ativarOuvintes() {
-    document.addEventListener('click', iniciarAoInteragir);
-    document.addEventListener('scroll', iniciarAoInteragir);
-    document.addEventListener('keydown', iniciarAoInteragir);
+  // Ativa o som no primeiríssimo clique do usuário na página
+  function ativarSom() {
+    audio.muted = false; 
+    // Tenta dar play novamente caso o autoplay inicial tenha falhado
+    audio.play(); 
+    
+    // Remove o evento para o som não ficar reiniciando nos próximos cliques
+    document.removeEventListener('click', ativarSom);
   }
 
-  function iniciarAoInteragir() {
-    tocarMusica();
-    // Remove os eventos para não repetir o código à toa
-    document.removeEventListener('click', iniciarAoInteragir);
-    document.removeEventListener('scroll', iniciarAoInteragir);
-    document.removeEventListener('keydown', iniciarAoInteragir);
-  }
+  // Escuta qualquer clique na página para liberar o áudio
+ document.addEventListener('click', ativarSom);
 </script>
-
-
 </body>
 </html>

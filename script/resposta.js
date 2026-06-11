@@ -107,10 +107,7 @@ const config = {
             data: [acertos, erros],
             backgroundColor: [
                 '#000000',
-            ],
-           
-        }]
-    },
+            ], }]},
     options: {
     plugins: {
         legend: {
@@ -125,15 +122,11 @@ const config = {
             display: false,
             beginAtZero: true,
             max: totalPerguntas
-        }
-    }
-}
-};
+        }}}};
 new Chart(canva, config);
     } else {
         console.log('Resultado:', acertos, 'de', totalPerguntas);
     }
-
     sessionStorage.setItem('resultado', JSON.stringify({
         acertos,
         total: totalPerguntas,
