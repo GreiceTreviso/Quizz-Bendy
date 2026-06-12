@@ -156,6 +156,6 @@ function login(){
     
     // Aguarda 1 segundo para mostrar a mensagem de sucesso antes de redirecionar
     setTimeout(() => {
-        window.location.href = '../pagina1.html'
+        window.location.href = '/pagina1.html'
     }, 1000)
 }

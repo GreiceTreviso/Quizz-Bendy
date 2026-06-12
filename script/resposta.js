@@ -13,7 +13,7 @@ function gerarConteudoResultado(acertos) {
     } else if (acertos >= 4 && acertos <= 5) {
         return {
             titulo: "Fraco!",
-            imagem: "/imagens/bendy-fraco.png",
+            imagem: "/imagens/bendy fraco.png",
             mensagem: `<p><strong>${acertos}/${totalPerguntas} acertos</strong></p>
                       <p>Você está começando a desvendar os mistérios da tinta, mas ainda há muito a aprender!
                       Os segredos do Ink Demon não se revelam tão facilmente para quem não presta atenção aos detalhes.</p>
