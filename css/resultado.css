@@ -9,6 +9,22 @@ body{
     max-height: 50%;
 }
 
+#btnSair {
+    display: block;
+    margin: 10% auto;
+    padding: 20px 40px;
+    font-size: 18px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btnSair:hover {
+    transform: scale(1.05);
+}
+
 /*card*/
 .cardr{
 background-color: #DAA520;

@@ -140,3 +140,14 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('DOMContentLoaded', () => {
     mostrarResultado();
 });
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const btnSair = document.getElementById('btnSair');
+
+    btnSair.addEventListener('click', () => {
+        sessionStorage.clear();
+        window.location.href = './index.html';
+    });
+});
