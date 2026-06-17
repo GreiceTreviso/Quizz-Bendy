@@ -39,3 +39,21 @@ background-attachment: fixed; /*cola img na tela*/
     display: block;
     
 }
+
+/* 1. Primeiro, adicionamos a transição suave nas imagens que estão dentro dos links */
+.todas > a img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Garante que o movimento de subir e a sombra sejam suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* 2. Agora, criamos o efeito de levantar quando o mouse passa por cima do link */
+.todas > a:hover img {
+    /* Faz a imagem subir 15 pixels */
+    transform: translateY(-15px);
+    
+    /* Adiciona a sombra para dar efeito de profundidade */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+}
