@@ -1,0 +1,27 @@
+{
+  "name": "quizz-bendy",
+  "version": "1.0.0",
+  "main": "script/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon script/index.js",
+    "test": "echo \"Erro: nenhum teste configurado\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreiceTreviso/Quizz-Bendy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreiceTreviso/Quizz-Bendy/issues"
+  },
+  "homepage": "https://github.com/GreiceTreviso/Quizz-Bendy#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  },
+  "description": ""
+}

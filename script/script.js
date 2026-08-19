@@ -147,7 +147,7 @@ function login(){
     mensagemErro.style.display = 'block'
 
     // criar um json
-     let user = {
+     let user1 = {
         email: emailValue,
         password: passwordValue
     }
