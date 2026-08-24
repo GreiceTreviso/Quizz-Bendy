@@ -152,7 +152,7 @@ function login(){
         password: passwordValue
     }
 
-    sessionStorage.setItem('user', JSON.stringify(user))
+    sessionStorage.setItem('user', JSON.stringify(user1))
     
     // Aguarda 1 segundo para mostrar a mensagem de sucesso antes de redirecionar
     setTimeout(() => {
