@@ -1,8 +1,20 @@
-let url ='http://localhost:3000/rota1'
+async function enviarResultado() {
+	const url = 'http://localhost:3000/rota1'
 
-let resp = await fetch(url)
+	try {
+		const resp = await fetch(url)
 
-let dados = await resp.json()
+		if (!resp.ok) {
+			throw new Error(`Erro HTTP: ${resp.status}`)
+		}
 
-alert(dados.msg)
-console.log(dados)
+		const dados = await resp.text()
+		alert('Resultado efetuado com sucesso!')
+		console.log(dados)
+	} catch (erro) {
+		alert('Não foi possível efetuar o resultado. Verifique se o servidor está funcionando.')
+		console.error(erro)
+	}
+}
+
+enviarResultado()

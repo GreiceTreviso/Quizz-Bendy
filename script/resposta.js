@@ -135,10 +135,13 @@ new Chart(canva, config);
     }));
 }
 window.addEventListener('DOMContentLoaded', () => {
-    mostrarResultado();
-});
-window.addEventListener('DOMContentLoaded', () => {
-    mostrarResultado();
+    try {
+        mostrarResultado();
+        alert('Resultado efetuado com sucesso!');
+    } catch (erro) {
+        alert('Não foi possível efetuar o resultado.');
+        console.error(erro);
+    }
 });
 
 
